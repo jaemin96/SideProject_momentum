@@ -1,76 +1,37 @@
-// people object 생성
-const people = [
-  {
-    name: "김재민",
-    birthDay: "1996-01-28",
-    sex: "male",
-    telephone: "010-4731-9889",
-  },
-];
-
-// 객체와 개체 정보
-console.log(people[0]);
-console.log(people[0].name);
-console.log(people[0].birthDay);
-console.log(people[0].sex);
-console.log(people[0].telephone);
-
-// 개체 정보 변경 (Add, Update)
-// Update!
-people[0].sex = "male!";
-// Add!
-people[0].money = "700,000";
-// update object log!
-console.log(people[0]);
-
-// Add subObject
-people.push({
-  name: "케인",
-  birthDay: "1990-11-21",
-  sex: "male",
-  telephone: "010-4432-9952",
-});
-
-console.log(people);
-console.log(people[0]);
-console.log(people[1]);
-
-// n제곱 === "**"
-console.log(5 ** 3);
-
-console.log("------------------");
-
-// 기존 김재민 정보만 들어있는 people 객체에서 케인의 정보도 포함된 최종 people 객체 정보를
-// 복사해서 ("..." <--) 새로운 객체(newPeople)를 생성한다.
-const newPeople = [...people];
-
-console.log(newPeople);
-console.log(newPeople[0]);
-console.log(newPeople[1]);
-
-// 자바스크립트 함수 선언 === function(){}
-// object의 entity 들을 보여주는 함수
-const showPeople = (entity) => {
-  console.log(entity);
+// 태그 텍스트 변경하기
+onUpdateText = (tag, text) => {
+  tag.innerHTML = `[[ ${text} ]]`;
 };
 
-// 김재민의 정보를 넘겨준다.
-showPeople(newPeople[0].name);
-showPeople(newPeople[0].birthDay);
-showPeople(newPeople[0].sex);
-showPeople(newPeople[0].telephone);
+onChange = () => {
+  if (confirm("텍스트의 색상을 변경하시겠습니까?")) {
+    changeText.style.color = "blue";
+  }
+};
 
-// 케인의 정보를 넘겨준다.
-showPeople(newPeople[1].name);
-showPeople(newPeople[1].birthDay);
-showPeople(newPeople[1].sex);
-showPeople(newPeople[1].telephone);
+// 체인지 h1태그 불러오기 (가장 애용하는 방법)
+const changeText = document.querySelector(".change");
+// 쿼리셀렉터에 해당하는 모든 경우를 가져오는 방법 -- 잘안써봤음
+const changeTextAll = document.querySelectorAll(".change");
+// 클래스 네임 자체를 찾아오는 방법 -- 지양
+// 클래스 자체 이름을 가져오는 것이기 떄문에 클래스명이라는 것을 가리키는 '.' 사용하지 않아도 됨
+// document.getElementsById -- 아이디를 받아오는데 이 코드 사용하는거 자주 봄 -- 구식(?)
+const dropperClassName = document.getElementsByClassName("change");
 
-console.log("--------*****--------");
+console.log(changeText);
+// 위 경우를 제외한 반환 형태 - 리스트
+console.log(changeTextAll);
+console.log(dropperClassName);
 
-// map 함수 사용하는 거 다시 찾아보기!!
-// const mapItems = newPeople.map((item) => {
-//   item.name;
-// });
+onUpdateText(changeText, "Click me!!");
 
-// console.log(mapItems);
+//  (1) -- 함수 불러오기 형태
+// changeText.addEventListener("click", onChange);
+
+//  (2) -- 함수 선언 일체 형태
+changeText.addEventListener("click", () => {
+  if (confirm("텍스트의 색상을 변경하시겠습니까?")) {
+    //   토글링 -- 클릭 되어질 때만 blue로 색상 변경하기 위해 클래스 네임 토글링
+    changeText.classList.toggle("Clicked");
+  }
+});
