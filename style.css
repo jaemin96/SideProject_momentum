@@ -1,11 +1,3 @@
-#login.login {
+.hide {
   display: none;
-}
-
-.logout {
-  display: none;
-}
-
-.logout.block {
-  display: block;
 }

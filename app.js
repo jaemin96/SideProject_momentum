@@ -2,9 +2,11 @@
 
 const loginInput = document.querySelector("#login input");
 const loginForm = document.querySelector("#login");
-const logoutBtn = document.querySelector(".logout");
+const logoutForm = document.querySelector("#logout");
+const logoutBtn = document.querySelector("#logout button");
+const greetMessage = document.querySelector("#logout h1");
 
-console.log(loginForm, loginInput, logoutBtn);
+console.log(loginForm, loginInput, logoutBtn, greetMessage);
 
 // 로그안버튼이 눌릴 경우 인풋의 값을 출력!!
 // form - input 은 자동적으로 submit이 이루어지면서 새로고침을 기본으로 한다.
@@ -15,20 +17,16 @@ console.log(loginForm, loginInput, logoutBtn);
 
 const onLogin = (event) => {
   event.preventDefault();
-  console.log(loginInput.value);
-  loginForm.classList.toggle("login");
-
-  if (loginForm.className === "login") {
-    //   newBtn.appendChild(btnText);
-    //   document.body.insertBefore(newBtn);
-    logoutBtn.classList.add("block");
-  }
+  loginForm.classList.add("hide"); // 로그인 성공 시 폼 숨기기
+  greetMessage.innerText = `Hello, ${loginInput.value}`; // 로그인 성공 시 메세지
+  loginInput.value = ""; // 입력 초기화
+  logoutForm.classList.remove("hide"); // 로그인 성공 시 로그아웃 폼 화면에 표시
 };
 
 const onLogout = (event) => {
   event.preventDefault();
-  logoutBtn.classList.remove("block");
-  loginForm.classList.remove("login");
+  logoutForm.classList.add("hide"); // 로그아웃 성공 시 폼 숨기기
+  loginForm.classList.remove("hide"); // 로그아웃 성공 시 로그인 폼 화면에 표시
 };
 
 // 버튼의 기본 설정은 브라우저에서 설정하고 인풋과 버튼을 감싸는 form 자체에서 이벤트 수행 - submit
