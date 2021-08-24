@@ -64,3 +64,35 @@ if (localStorage.getItem(USER_NAME) === null) {
 }
 
 logoutBtn.addEventListener("click", onLogout);
+
+// 시계
+// 1) 시간을 띄우는 함수 만들기
+const setClock = (e) => {
+  // 시,분,초 만드는 내가 아는 방법
+  // 날짜 객체를 생성해서 객체에서 시,분,초 정보 가져오기
+  const recentTime = new Date();
+  console.log(recentTime);
+
+  const time_hour = recentTime.getHours();
+  const time_min = recentTime.getMinutes();
+  const time_sec = recentTime.getSeconds();
+
+  console.log(time_hour);
+  console.log(time_min);
+  console.log(time_sec);
+
+  // 구닥다리 방법, 노가다
+  time_hour < 10
+    ? console.log(`0${time_hour}:${time_min}:${time_sec}`)
+    : console.log(`${time_hour}:${time_min}:${time_sec}`);
+
+  (time_hour < 10) & (time_min < 10)
+    ? console.log(`0${time_hour}:0${time_min}:${time_sec}`)
+    : console.log(`0${time_hour}:0${time_min}:${time_sec}`);
+
+  time_sec < 10
+    ? console.log(`${time_hour}:${time_min}:0${time_sec}`)
+    : console.log(`${time_hour}:${time_min}:${time_sec}`);
+};
+
+setClock();
