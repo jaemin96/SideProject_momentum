@@ -7,21 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>momentum</title>
     <!-- stylesheet 속성 부여 -- style.css파일에 해당하는 스타일 -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../src/css/style.css">
 </head>
 
 <body>
     <!-- Login Form -->
     <form id="login">
-        <input required max="15" type="text" placeholder="아이디를 입력하세요">
-        <button id="login" class="">login</button>
+        <input id="userId" required max="15" type="text" placeholder="아이디를 입력하세요">
+        <button id="login-btn">login</button>
     </form>
     <div id="logout" class="hide">
-        <h1></h1>
-        <h2></h2>
-        <button>logout</button>
+        <h1 id="greet"></h1>
+        <h2 id="clock"></h2>
+        <button id="logout-btn">logout</button>
     </div>
-    <script src="app.js"></script>
+    <script src="../src/js/sign/sign.js"></script>
+    <script src="../src/js/clock/Clock.js"></script>
 </body>
 
 </html>
