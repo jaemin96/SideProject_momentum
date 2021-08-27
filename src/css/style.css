@@ -1,3 +1,41 @@
+:root {
+  /* color */
+  --color-black: black;
+  --color-white: white;
+  --color-blue: blue;
+
+  /* font */
+  --fontSize-L: 16px;
+  --fontSize-M: 12px;
+  --fontSize-S: 8px;
+
+  /* space */
+  --base-space-padding: 0.5em;
+  --base-space-margin: 0.5em;
+}
+
 .hide {
   display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+#login {
+  position: absolute;
+  padding: calc(var(--base-space-padding) * 2);
+  border: 1px solid var(--color-black);
+  border-radius: 1em;
+  box-shadow: 0.2em 0.2em 0.5em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

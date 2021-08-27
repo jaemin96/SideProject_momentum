@@ -2,11 +2,9 @@
 
 const loginInput = document.querySelector("#login #userId");
 const loginForm = document.querySelector("#login");
-const logoutForm = document.querySelector("#logout");
-const logoutBtn = document.querySelector("#logout #logout-btn");
-const greetMessage = document.querySelector("#logout #greet");
-
-console.log(loginForm, loginInput, logoutBtn, greetMessage);
+const successLoginForm = document.querySelector("#successLogin");
+const logoutBtn = document.querySelector("#successLogin #logout-btn");
+const greetMessage = document.querySelector("#successLogin #greet");
 
 // 로그안버튼이 눌릴 경우 인풋의 값을 출력!!
 // form - input 은 자동적으로 submit이 이루어지면서 새로고침을 기본으로 한다.
@@ -18,7 +16,7 @@ const hidden = "hide";
 // exist id!!
 const existId = (e) => {
   // 아이디 정보가 있을 시, 로그아웃 폼은 표시 로그인 폼은 표시하지 않음
-  logoutForm.classList.remove(hidden);
+  successLoginForm.classList.remove(hidden);
   loginForm.classList.add(hidden);
 };
 
@@ -26,7 +24,7 @@ const existId = (e) => {
 const notExistId = (e) => {
   // 아이디 정보가 없을 시, 로그인 폼은 표시 로그아웃 폼은 표시하지 않음
   loginForm.classList.remove(hidden);
-  logoutForm.classList.add(hidden);
+  successLoginForm.classList.add(hidden);
 };
 
 // print user name!

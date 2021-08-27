@@ -1,6 +1,6 @@
 ("use strict");
 
-const loginClock = document.querySelector("#logout #clock");
+const loginClock = document.querySelector("#successLogin #clock");
 
 const confirmTime = (time) => {
   if (time < 10) {
