@@ -14,6 +14,7 @@ const confirmTime = (time) => {
 const showClock = (e) => {
   // 날짜 객체를 생성해서 객체에서 시,분,초 정보 가져오기
   const recentTime = new Date();
+
   // 동적 값 할당을 위해 const가 아닌 let을 사용
   let time_hour = recentTime.getHours();
   let time_PM_hour = recentTime.getHours() - 12;
