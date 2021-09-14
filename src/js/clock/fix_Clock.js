@@ -13,8 +13,6 @@ const Clock = () => {
     : (my_clock_hour = `[AM]${my_clock_hour}`);
 
   my_clock_hour < 10 && my_clock_hour == `0${my_clock_hour}`;
-
-  console.log(`${my_clock_hour}:${my_clock_min_sec}`);
 };
 
 setInterval(Clock, 1000);
