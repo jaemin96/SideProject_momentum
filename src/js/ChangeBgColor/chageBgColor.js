@@ -7,8 +7,11 @@ const changeBgColor = () => {
   let value_R = Math.floor(Math.random() * 254);
   let value_G = Math.floor(Math.random() * 254);
   let Value_B = Math.floor(Math.random() * 254);
+  let Value_A = Math.floor(Math.random() * 1 * 10) / 10;
 
-  bgForm.style.background = `rgb(${value_R},${value_G},${Value_B})`;
+  console.log(Value_A);
+
+  bgForm.style.background = `rgba(${value_R},${value_G},${Value_B},${Value_A})`;
 };
 
 setInterval(changeBgColor, 6000);
