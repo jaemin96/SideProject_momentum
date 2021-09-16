@@ -5,6 +5,7 @@ const loginForm = document.querySelector("#login");
 const successLoginForm = document.querySelector("#successLogin");
 const logoutBtn = document.querySelector("#successLogin #logout-btn");
 const greetMessage = document.querySelector("#successLogin #greet");
+const intro = document.querySelector("#main");
 
 // 로그안버튼이 눌릴 경우 인풋의 값을 출력!!
 // form - input 은 자동적으로 submit이 이루어지면서 새로고침을 기본으로 한다.
@@ -48,6 +49,11 @@ const onLogout = (event) => {
   notExistId();
   localStorage.removeItem(USER_NAME); // 로그아웃 시 로그인 정보 삭제
 };
+
+// Intro!
+intro.addEventListener("click", () => {
+  console.log("zzzz");
+});
 
 // saved user name
 const SAVED_NAME = localStorage.getItem(USER_NAME);
