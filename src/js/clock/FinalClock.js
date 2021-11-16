@@ -6,6 +6,7 @@ const getDate = () => {
   const date = new Date();
 
   let Hour = date.getHours();
+  //   const Hour = String(date.getHours()).padStart(2, "0"); // PM, AM 구분 안할 경우
   const Minute = String(date.getMinutes()).padStart(2, "0");
   const Second = String(date.getSeconds()).padStart(2, "0");
 
