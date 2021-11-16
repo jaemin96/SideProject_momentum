@@ -9,9 +9,8 @@ const changeBgColor = () => {
   let Value_B = Math.floor(Math.random() * 254);
   let Value_A = Math.floor(Math.random() * 1 * 10) / 10;
 
-  console.log(Value_A);
-
   bgForm.style.background = `rgba(${value_R},${value_G},${Value_B},${Value_A})`;
 };
 
+changeBgColor();
 setInterval(changeBgColor, 6000);

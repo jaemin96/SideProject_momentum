@@ -93,3 +93,8 @@ body {
   margin: calc(var(--base-space-margin) * 2) calc(var(--base-space-margin) * 3)
     0 0;
 }
+
+#quoteForm {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
