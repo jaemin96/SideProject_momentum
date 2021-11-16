@@ -11,13 +11,10 @@ const Quote = document.querySelector("#quoteForm #quote");
 const Name = document.querySelector("#quoteForm #name");
 
 const rep_quotes = () => {
-  const random_Num = Math.floor(Math.random() * 6) + 1;
-  quotes.map((item) => {
-    if (random_Num === item.id) {
-      Quote.innerText = `${item.quote}`;
-      Name.innerText = `/ ${item.name}`;
-    }
-  });
+  const item = quotes[Math.floor(Math.random() * quotes.length)];
+
+  Quote.innerText = `${item.quote}`;
+  Name.innerText = `/ ${item.name}`;
 };
 
 rep_quotes();
