@@ -2,9 +2,7 @@
 
 const images = [
   { img: "alex.jpg" },
-  { img: "alex2.jpg" },
   { img: "Aurora.jpg" },
-  { img: "nature1.jpg" },
   { img: "nature2.jpg" },
   { img: "nature3.jpg" },
   { img: "nightSky.jpg" },

@@ -51,9 +51,7 @@ const onLogout = (event) => {
 };
 
 // Intro!
-intro.addEventListener("click", () => {
-  console.log("zzzz");
-});
+intro.addEventListener("click", () => {});
 
 // saved user name
 const SAVED_NAME = localStorage.getItem(USER_NAME);
