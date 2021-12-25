@@ -1,10 +1,10 @@
 ("use strict");
 
-const loginInput = document.querySelector("#login #userId");
-const loginForm = document.querySelector("#login");
-const successLoginForm = document.querySelector("#successLogin");
-const logoutBtn = document.querySelector("#successLogin #logout-btn");
-const greetMessage = document.querySelector("#successLogin #greet");
+const loginForm = document.querySelector("#signIn");
+const userId = document.querySelector("#signIn #userId");
+const userPage = document.querySelector("#userPage");
+const logoutBtn = document.querySelector("#successLogin #logoutBtn");
+const greetMessage = document.querySelector("#login #greet");
 const intro = document.querySelector("#main");
 
 // 로그안버튼이 눌릴 경우 인풋의 값을 출력!!
@@ -17,7 +17,7 @@ const hidden = "hide";
 // exist id!!
 const existId = (e) => {
   // 아이디 정보가 있을 시, 로그아웃 폼은 표시 로그인 폼은 표시하지 않음
-  successLoginForm.classList.remove(hidden);
+  userPage.classList.remove(hidden);
   loginForm.classList.add(hidden);
 };
 
@@ -25,7 +25,7 @@ const existId = (e) => {
 const notExistId = (e) => {
   // 아이디 정보가 없을 시, 로그인 폼은 표시 로그아웃 폼은 표시하지 않음
   loginForm.classList.remove(hidden);
-  successLoginForm.classList.add(hidden);
+  userPage.classList.add(hidden);
 };
 
 // print user name!
@@ -36,10 +36,10 @@ const onPrintName = (name) => {
 // login!
 const onLogin = (event) => {
   event.preventDefault();
-  const name = loginInput.value; //중복 사용되는 입력 값 선언
+  const name = userId.value; //중복 사용되는 입력 값 선언
   localStorage.setItem(USER_NAME, name); // 로컬스토리지에 아이디 정보 저장
   onPrintName(name); // 로그인 성공 시 메세지
-  loginInput.value = "";
+  userId.value = "";
   existId();
 };
 
