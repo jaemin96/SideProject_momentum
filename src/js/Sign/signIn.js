@@ -39,6 +39,7 @@ const handlerFunction = {
 
     // 공백을 입력하거나 입력하지 않은 경우 수행x
     if (userInput.value.trim() !== "") {
+      window.location.reload(); // 페이지 리로딩
       localStorage.setItem(USER_NAME, userInput.value);
     }
 
